@@ -1,6 +1,7 @@
-
 package userInterface;
 
+
+// Java Swing used 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,6 +11,7 @@ import dataManagement.Person;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
+// Action lisner 
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -31,6 +33,8 @@ import dataInput.XmlParser;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+
+// Main Class - Run here
 
 public class MainScreen extends GridBagBasedScreen {
 

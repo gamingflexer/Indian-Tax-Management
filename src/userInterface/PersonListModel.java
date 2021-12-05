@@ -3,7 +3,6 @@ package userInterface;
 import java.util.ArrayList;
 import javax.swing.AbstractListModel;
 import dataManagement.Person;
-import dataManagement.Receipt;
 
 public class PersonListModel extends AbstractListModel<String> {
 	

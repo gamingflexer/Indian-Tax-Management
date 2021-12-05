@@ -2,9 +2,6 @@ package dataManagement;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-
-import dataManagement.Person;
 
 public class PeopleManager {
 

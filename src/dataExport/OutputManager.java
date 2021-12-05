@@ -6,9 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import dataExport.OutputFileEncoder;
-import dataExport.TxtEncoder;
-import dataExport.XmlEncoder;
+
 import dataManagement.Person;
 import dataManagement.Receipt;
 

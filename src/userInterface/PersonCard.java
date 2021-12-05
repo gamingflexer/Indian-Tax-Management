@@ -28,9 +28,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 
-import dataExport.BarChart;
 import dataExport.OutputManager;
-import dataExport.PieChart;
 
 public class PersonCard extends GridBagBasedScreen implements ActionListener {
 	
@@ -76,7 +74,7 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 		this.setBounds(150, 150, 750, 400);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setMinimumSize(new Dimension(750,400));
-		this.setTitle("Tax-Income Calculator");
+		this.setTitle("Indian-Tax-Income Calculator");
 		
 		this.addWindowFocusListener(new WindowFocusListener() {
 			
@@ -110,8 +108,8 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 		buttonClose = new JButton("Close");
 		buttonAddReceipt = new JButton("Add");
 		buttonDeleteReceipt = new JButton("Delete");
-		buttonShowPieChart = new JButton("Expenses");
-		buttonShowBarChart = new JButton("Tax Charts");
+		buttonShowPieChart = new JButton("");
+		buttonShowBarChart = new JButton("");
 		
 		buttonSaveChanges.addActionListener(this);
 		buttonClose.addActionListener(this);
@@ -181,10 +179,7 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 		addGridItem(panel, buttonSaveChanges, 0, 5, 1, 1, GridBagConstraints.CENTER);
 		addGridItem(panel, buttonClose, 1, 5, 1, 1, GridBagConstraints.CENTER);
 		
-		addGridItem(panel, buttonShowPieChart, 4, 5, 1, 1, GridBagConstraints.CENTER);
-		addGridItem(panel, buttonShowBarChart, 5, 5, 1, 1, GridBagConstraints.CENTER);
-		
-		refreshSavedStateLabel();
+
 				
 		this.add(panel);
 		this.pack();
@@ -216,8 +211,6 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 			
 		} else if ( e.getSource().equals(buttonAddReceipt) ) {
 			
-			AddReceiptScreen addReceiptScreen = new AddReceiptScreen(receiptsPanel.getModel(), person);
-			
 		} else if ( e.getSource().equals(buttonDeleteReceipt) ) {
 			
 			if ( receiptsPanel.isAnyListCellSelected() == true ){
@@ -225,15 +218,6 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 				outputManager.updatePersonFile(person);
 			}
 			
-		} else if ( e.getSource().equals(buttonShowPieChart) ) {
-			
-			PieChart pieChart = new PieChart("Income Tax Calculator",
-					person.getFirstName()+" "+person.getLastName()+"'s Expenses Breakdown.", person);
-			
-		} else if ( e.getSource().equals(buttonShowBarChart) ) {
-			
-			BarChart barChart = new BarChart("Income Tax Calculator",
-					person.getFirstName()+" "+person.getLastName()+"'s Tax Calculation.", person);
 		}
 	}
 	
@@ -244,18 +228,6 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 		person.setIdentifyingNumber( Integer.valueOf(textId.getText()) );
 	}
 	
-	private void refreshSavedStateLabel() {
-		
-		if (person.getFile()==null) {
-			fileSaveStateLabel.setText("Not Saved to File");
-			fileSaveStateLabel.setForeground(Color.red);
-			fileSaveStateLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 15));
-		} else {
-			fileSaveStateLabel.setText("Saved to File");
-			fileSaveStateLabel.setForeground(new Color(0, 153, 75)); //Dark Green
-			fileSaveStateLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 15));
-		}
-	}
 
 	public void hideCard() {
 		this.setVisible(false);
