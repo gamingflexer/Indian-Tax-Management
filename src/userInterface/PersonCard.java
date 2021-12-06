@@ -1,7 +1,6 @@
 package userInterface;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -228,7 +227,6 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 		person.setIdentifyingNumber( Integer.valueOf(textId.getText()) );
 	}
 	
-
 	public void hideCard() {
 		this.setVisible(false);
 	}
