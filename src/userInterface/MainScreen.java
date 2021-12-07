@@ -27,9 +27,9 @@ import java.io.File;
 import javax.swing.JScrollPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import dataExport.OutputManager;
-import dataInput.InputManager;
-import dataInput.XmlParser;
+// import dataExport.OutputManager;
+// import dataInput.InputManager;
+// import dataInput.XmlParser;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -39,7 +39,7 @@ import javax.swing.JFileChooser;
 public class MainScreen extends GridBagBasedScreen {
 
 	PeopleManager peopleManager;
-	OutputManager outputManager;
+	// OutputManager outputManager;
 	
 	private JFrame frame;
 	private JLabel mainLabelText;
@@ -53,7 +53,7 @@ public class MainScreen extends GridBagBasedScreen {
 	private JButton buttonClose;
 	private String[] personTypes = { "slab_3", "slab_4", "slab_2", "slab_1" };
 	private String[] exportTypes = { "Full Data File", "Summary Log" };
-	XmlParser inputFileParser;
+	// XmlParser inputFileParser;
 	String filename = "";
 	JFileChooser fileChooser;
 	Person selectedObject;
@@ -77,7 +77,7 @@ public class MainScreen extends GridBagBasedScreen {
 
 	private void initialize() {
 		
-		outputManager = new OutputManager();
+		// outputManager = new OutputManager();
 		
 		frame = new JFrame("Tax-Income Calculator");
 		frame.setBounds(100, 100, 600, 400);
@@ -211,42 +211,42 @@ public class MainScreen extends GridBagBasedScreen {
 		if (list.getSelectedIndex() >= 0) {
 			
 			Person personObject = model.getPersonAt(list.getSelectedIndex());
-			showSaveDialog(personObject, type);
+			// showSaveDialog(personObject, type);
 		}
 	}
 	
-	protected void showSaveDialog(Person personObject, String saveType) {
-		JFileChooser fileChooser = new JFileChooser();
+	// protected void showSaveDialog(Person personObject, String saveType) {
+	// 	JFileChooser fileChooser = new JFileChooser();
 		
-		if (saveType.equals("Full")){
-			fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "xml")));
-		} else if (saveType.equals("Log")) {
-			fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "log")));
-		}
+	// 	if (saveType.equals("Full")){
+	// 		fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "xml")));
+	// 	} else if (saveType.equals("Log")) {
+	// 		fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "log")));
+	// 	}
 		
-		int returnVal = fileChooser.showSaveDialog(frame);
+	// 	int returnVal = fileChooser.showSaveDialog(frame);
 		
-		if(returnVal == JFileChooser.APPROVE_OPTION) {
+	// 	if(returnVal == JFileChooser.APPROVE_OPTION) {
 			
-			if ( saveType.equals("Full") ) {
-				saveFullFile(personObject, fileChooser.getSelectedFile());
-			} else if ( saveType.equals("Log") ) {
-				saveLogFile(personObject, fileChooser.getSelectedFile());
-			}
-		}
-	}
+	// 		if ( saveType.equals("Full") ) {
+	// 			saveFullFile(personObject, fileChooser.getSelectedFile());
+	// 		} else if ( saveType.equals("Log") ) {
+	// 			saveLogFile(personObject, fileChooser.getSelectedFile());
+	// 		}
+	// 	}
+	// }
 	
-	protected void saveFullFile(Person personObject, File selectedFile) {
+	// protected void saveFullFile(Person personObject, File selectedFile) {
 			
-			outputManager.savePersonToFile(personObject, selectedFile);
-			JOptionPane.showMessageDialog(frame, "The data file was saved to disk.");
-	}
+	// 		outputManager.savePersonToFile(personObject, selectedFile);
+	// 		JOptionPane.showMessageDialog(frame, "The data file was saved to disk.");
+	// }
 	
-	protected void saveLogFile(Person personObject, File selectedFile) {
+	// protected void saveLogFile(Person personObject, File selectedFile) {
 
-			outputManager.savePersonToLogFile(personObject, selectedFile);
-			JOptionPane.showMessageDialog(frame, "The log file was saved to disk.");
-	}
+	// 		outputManager.savePersonToLogFile(personObject, selectedFile);
+	// 		JOptionPane.showMessageDialog(frame, "The log file was saved to disk.");
+	// }
 	
 	protected void showFileImportDialog() {
 		
@@ -255,11 +255,11 @@ public class MainScreen extends GridBagBasedScreen {
 		fileChooser.setFileFilter(filter);
 		int returnVal = fileChooser.showOpenDialog(frame);
 		
-		if(returnVal == JFileChooser.APPROVE_OPTION) {
+		// if(returnVal == JFileChooser.APPROVE_OPTION) {
 						
-			InputManager inputManager = new InputManager();
-			Person importedPerson = inputManager.importPersonFromFile(fileChooser.getSelectedFile());
-			model.addElement(importedPerson);		
-		}
+		// 	InputManager inputManager = new InputManager();
+		// 	Person importedPerson = inputManager.importPersonFromFile(fileChooser.getSelectedFile());
+		// 	model.addElement(importedPerson);		
+		// }
 	}
 }

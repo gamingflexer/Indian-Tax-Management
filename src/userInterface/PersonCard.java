@@ -27,11 +27,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 
-import dataExport.OutputManager;
+// import dataExport.OutputManager;
 
 public class PersonCard extends GridBagBasedScreen implements ActionListener {
 	
-	OutputManager outputManager;
+	// OutputManager outputManager;
 	private Person person;
 	
 	private JButton buttonSaveChanges;
@@ -52,7 +52,7 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 	
 	public PersonCard(Person person) {
 		
-		outputManager = new OutputManager();
+		// outputManager = new OutputManager();
 		this.person = person;
 
 		SwingUtilities.invokeLater(new Runnable() {
@@ -198,7 +198,7 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 			
 			if ( isNumeric(textIncome.getText()) && isNumeric(textId.getText()) ) {
 				updatePersonData();
-				outputManager.updatePersonFile(person);
+				// outputManager.updatePersonFile(person);
 				this.dispose();
 			} else {
 				JOptionPane.showMessageDialog(this, "Error: Tax-Payer Id and Income should be number values.");
@@ -214,7 +214,7 @@ public class PersonCard extends GridBagBasedScreen implements ActionListener {
 			
 			if ( receiptsPanel.isAnyListCellSelected() == true ){
 				receiptsPanel.deleteSelectedCell();
-				outputManager.updatePersonFile(person);
+				// outputManager.updatePersonFile(person);
 			}
 			
 		}
