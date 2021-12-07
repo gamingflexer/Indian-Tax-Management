@@ -18,15 +18,18 @@ public class Login extends JFrame implements ActionListener{
     JTextField t2;
     JButton b1,b2;
 
-    Login(){
+    public Login(){
 
         super("Login");
 
         setLayout(null);
 
         l1 = new JLabel("Username");
+        /*ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/second.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
+        ImageIcon i3 =  new ImageIcon(i2);*/
         l1.setBounds(40,20,100,30);
-        add(l1);
+        
         
         l2 = new JLabel("Password");
         l2.setBounds(40,70,100,30);
@@ -40,12 +43,10 @@ public class Login extends JFrame implements ActionListener{
         t2.setBounds(150,70,150,30);
         add(t2);
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("hotel/management/system/icons/second.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
-        ImageIcon i3 =  new ImageIcon(i2);
-        JLabel l3 = new JLabel(i3);
-        l3.setBounds(350,10,150,150);
-        add(l3);
+        
+        // JLabel l3 = new JLabel(i3);
+        // l3.setBounds(350,10,150,150);
+        // add(l3);
 
 
         b1 = new JButton("Login");
@@ -65,12 +66,13 @@ public class Login extends JFrame implements ActionListener{
 
         b2.addActionListener(this);
         
-        
+        add(l1);
         getContentPane().setBackground(Color.WHITE);
 
         setVisible(true);
         setSize(600,300);
         setLocation(600,350);
+        setLayout(null);
 
     }
 
