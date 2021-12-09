@@ -215,39 +215,7 @@ public class MainScreen extends GridBagBasedScreen {
 		}
 	}
 	
-	// protected void showSaveDialog(Person personObject, String saveType) {
-	// 	JFileChooser fileChooser = new JFileChooser();
-		
-	// 	if (saveType.equals("Full")){
-	// 		fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "xml")));
-	// 	} else if (saveType.equals("Log")) {
-	// 		fileChooser.setSelectedFile(new File(outputManager.getPersonSuggestedFilename(personObject, "log")));
-	// 	}
-		
-	// 	int returnVal = fileChooser.showSaveDialog(frame);
-		
-	// 	if(returnVal == JFileChooser.APPROVE_OPTION) {
-			
-	// 		if ( saveType.equals("Full") ) {
-	// 			saveFullFile(personObject, fileChooser.getSelectedFile());
-	// 		} else if ( saveType.equals("Log") ) {
-	// 			saveLogFile(personObject, fileChooser.getSelectedFile());
-	// 		}
-	// 	}
-	// }
-	
-	// protected void saveFullFile(Person personObject, File selectedFile) {
-			
-	// 		outputManager.savePersonToFile(personObject, selectedFile);
-	// 		JOptionPane.showMessageDialog(frame, "The data file was saved to disk.");
-	// }
-	
-	// protected void saveLogFile(Person personObject, File selectedFile) {
 
-	// 		outputManager.savePersonToLogFile(personObject, selectedFile);
-	// 		JOptionPane.showMessageDialog(frame, "The log file was saved to disk.");
-	// }
-	
 	protected void showFileImportDialog() {
 		
 		fileChooser = new JFileChooser();
@@ -255,11 +223,6 @@ public class MainScreen extends GridBagBasedScreen {
 		fileChooser.setFileFilter(filter);
 		int returnVal = fileChooser.showOpenDialog(frame);
 		
-		// if(returnVal == JFileChooser.APPROVE_OPTION) {
-						
-		// 	InputManager inputManager = new InputManager();
-		// 	Person importedPerson = inputManager.importPersonFromFile(fileChooser.getSelectedFile());
-		// 	model.addElement(importedPerson);		
-		// }
+
 	}
 }
